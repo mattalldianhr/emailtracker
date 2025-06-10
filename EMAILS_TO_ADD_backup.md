@@ -573,7 +573,7 @@ P.S. - First 5 responses get a Happy Robots swag box! 📦
 ```
 
 ### Email 15a: Survey Reminder - Micha Carter
-- **Unique ID**: UF-015
+- **Unique ID**: UF-015a
 - **Subject**: ⏰ 24 Hours Left: Une Femme AI Survey Closes Tomorrow
 - **To**: micha@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -606,7 +606,7 @@ Jameca
 ```
 
 ### Email 15b: Survey Reminder - Joe Taverrite
-- **Unique ID**: UF-016
+- **Unique ID**: UF-015b
 - **Subject**: ⏰ 24 Hours Left: Une Femme AI Survey Closes Tomorrow
 - **To**: joe@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -639,7 +639,7 @@ Jameca
 ```
 
 ### Email 16: Survey Final Push - Whitney Wright
-- **Unique ID**: UF-017
+- **Unique ID**: UF-016
 - **Subject**: [FINAL HOURS] Your voice matters - Une Femme AI Survey
 - **To**: whitney@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -660,7 +660,7 @@ Hi Whitney,
 ## PRE-ENGAGEMENT EMAILS (Week -1)
 
 ### Email 1: Initial Program Agreement Follow-up
-- **Unique ID**: UF-018
+- **Unique ID**: UF-001
 - **Subject**: Une Femme AI Program: Confirming Thursday's Discussion + Next Steps
 - **To**: zach@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -699,7 +699,7 @@ Matt
 ```
 
 ### Email 2: Detailed Documentation Package
-- **Unique ID**: UF-019
+- **Unique ID**: UF-002
 - **Subject**: [Action Required] Une Femme AI Program: Complete Documentation Package
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -746,7 +746,7 @@ P.S. - I've included Sara's email for invoice processing. Let me know if finance
 ```
 
 ### Email 3: Team Grouping Confirmation Request
-- **Unique ID**: UF-020
+- **Unique ID**: UF-003
 - **Subject**: Quick Confirmation: Training Group Assignments for Une Femme Team
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -788,7 +788,7 @@ Jameca
 ```
 
 ### Email 4: Executive Calendar Hold Request
-- **Unique ID**: UF-021
+- **Unique ID**: UF-004
 - **Subject**: [Executive Team] Please Block: AI Strategy Sessions Week of June 16
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -830,7 +830,7 @@ P.S. - Sam, we'll specifically focus on how AI can accelerate key account expans
 ```
 
 ### Email 5: IT Requirements and Platform Access
-- **Unique ID**: UF-022
+- **Unique ID**: UF-005
 - **Subject**: IT Setup Required: AI Platforms for 11 Une Femme Users
 - **To**: zach@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -875,7 +875,7 @@ Alex
 ```
 
 ### Email 6: Finance and Invoice Processing
-- **Unique ID**: UF-023
+- **Unique ID**: UF-006
 - **Subject**: Une Femme AI Program: Invoice #1247 for Initial Payment
 - **To**: sara@unefemmewines.com
 - **From**: sheera@cardboardtoast.io
@@ -914,7 +914,7 @@ P.S. - Congrats on maintaining that 99.8% forecast accuracy! Looking forward to 
 ```
 
 ### Email 7: Participant Welcome and Intake Forms
-- **Unique ID**: UF-024
+- **Unique ID**: UF-007
 - **Subject**: Welcome to Une Femme's AI Transformation Journey!
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -959,7 +959,7 @@ P.S. - Jen and Zach's vision for AI at Une Femme is inspiring. You're part of so
 ```
 
 ### Email 8: Slack Channel Setup
-- **Unique ID**: UF-025
+- **Unique ID**: UF-008
 - **Subject**: [Slack Invite] Join #unefemme-ai-program Channel
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -998,7 +998,7 @@ Alex
 ## WEEK 1: IDENTIFY PHASE EMAILS
 
 ### Email 9: Monday Morning Kickoff Reminder
-- **Unique ID**: UF-026
+- **Unique ID**: UF-009
 - **Subject**: [Starting in 2 Hours] Une Femme AI Kickoff - Ready to Transform?
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1040,7 +1040,7 @@ P.S. - Jen has a special message about why she's betting on AI for Une Femme's f
 ```
 
 ### Email 10: Executive Interview Scheduling - Jen Pelka
-- **Unique ID**: UF-027
+- **Unique ID**: UF-010
 - **Subject**: [Calendar] Your AI Strategy Session - Tuesday at 1pm EST
 - **To**: jen@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1077,7 +1077,7 @@ Jameca
 ```
 
 ### Email 11: Executive Interview Scheduling - Zach Pelka
-- **Unique ID**: UF-028
+- **Unique ID**: UF-011
 - **Subject**: [Calendar] Your AI Strategy Session - Wednesday at 2pm EST
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1114,7 +1114,7 @@ Jameca
 ```
 
 ### Email 12: Executive Interview Scheduling - Sam Barnes
-- **Unique ID**: UF-029
+- **Unique ID**: UF-012
 - **Subject**: [Calendar] Your AI Strategy Session - Thursday at 11am EST
 - **To**: samantha@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1151,7 +1151,7 @@ Jameca
 ```
 
 ### Email 13: Executive Interview Scheduling - Thomas Hartman
-- **Unique ID**: UF-030
+- **Unique ID**: UF-013
 - **Subject**: [Calendar] Your AI Strategy Session - Friday at 3pm EST
 - **To**: thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1188,7 +1188,7 @@ Jameca
 ```
 
 ### Email 14: Survey Launch - Tuesday
-- **Unique ID**: UF-031
+- **Unique ID**: UF-014
 - **Subject**: 🍷 Your Input Shapes Une Femme's AI Future (10 min survey)
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1228,7 +1228,7 @@ P.S. - First 5 responses get a Happy Robots swag box! 📦
 ```
 
 ### Email 15: Survey Reminder - 24 Hours
-- **Unique ID**: UF-032
+- **Unique ID**: UF-015
 - **Subject**: ⏰ 24 Hours Left: Une Femme AI Survey Closes Tomorrow
 - **To**: [Non-responders - dynamically determined]
 - **From**: jameca@happyrobots.com
@@ -1261,7 +1261,7 @@ Jameca
 ```
 
 ### Email 16: Survey Final Push - Thursday Morning
-- **Unique ID**: UF-033
+- **Unique ID**: UF-016
 - **Subject**: [FINAL HOURS] Your voice matters - Une Femme AI Survey
 - **To**: Remaining non-responders
 - **From**: matt@happyrobots.com
@@ -1290,7 +1290,7 @@ Matt
 ```
 
 ### Email 17: Executive Interview Thank You Series
-- **Unique ID**: UF-034
+- **Unique ID**: UF-017
 - **Subject**: Thank You + Key Takeaways from Our AI Strategy Session
 - **To**: Individual Executive
 - **From**: jameca@happyrobots.com
@@ -1327,7 +1327,7 @@ P.S. - [Personalized comment about something they mentioned]
 ```
 
 ### Email 18: Week 1 Progress Update to Zach
-- **Unique ID**: UF-035
+- **Unique ID**: UF-018
 - **Subject**: [Week 1 Update] Une Femme AI Program: On Track
 - **To**: zach@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -1369,7 +1369,7 @@ Matt
 ```
 
 ### Email 19: Friday Week 1 Prep for Week 2
-- **Unique ID**: UF-036
+- **Unique ID**: UF-019
 - **Subject**: [Action Required] Prepare for Monday's AI Launch - 3 Quick Steps
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1420,7 +1420,7 @@ Jameca
 ## WEEK 2: INTENSIVE LAUNCH WEEK
 
 ### Email 20: Monday Morning Launch Day
-- **Unique ID**: UF-037
+- **Unique ID**: UF-020
 - **Subject**: 🚀 LAUNCH DAY: Your AI Transformation Begins Now!
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -1458,7 +1458,7 @@ Matt
 ```
 
 ### Email 21: Session Reminder - Executive AI Findings
-- **Unique ID**: UF-038
+- **Unique ID**: UF-021
 - **Subject**: [Starting in 30 min] Executive AI Findings - Link Inside
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1492,7 +1492,7 @@ Jameca
 ```
 
 ### Email 22: Session Reminder - Sprint Planning
-- **Unique ID**: UF-039
+- **Unique ID**: UF-022
 - **Subject**: [Starting in 30 min] AI Sprint Planning - Link Inside
 - **To**: zach@unefemmewines.com, kait@unefemmewines.com, joe@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1526,7 +1526,7 @@ Jameca
 ```
 
 ### Email 23: Session Reminder - All-Team Launch
-- **Unique ID**: UF-040
+- **Unique ID**: UF-023
 - **Subject**: [Starting in 30 min] All-Team AI Launch - Link Inside
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1559,7 +1559,7 @@ Jameca
 ```
 
 ### Email 24: Session Reminder - Group 1 Training
-- **Unique ID**: UF-041
+- **Unique ID**: UF-024
 - **Subject**: [Starting in 30 min] AI Training - Group 1 - Link Inside
 - **To**: evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1592,7 +1592,7 @@ Jameca
 ```
 
 ### Email 25: Platform Troubleshooting Support - Evyn Cameron
-- **Unique ID**: UF-042
+- **Unique ID**: UF-025
 - **Subject**: ⚡ Quick Fix: AI Platform Access Issues
 - **To**: evyn@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -1633,7 +1633,7 @@ Alex
 ```
 
 ### Email 26: Daily Sprint Update - Tuesday
-- **Unique ID**: UF-043
+- **Unique ID**: UF-026
 - **Subject**: [Sprint Update] Day 2: RNDC Scorecard Taking Shape!
 - **To**: zach@unefemmewines.com, kait@unefemmewines.com, joe@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -1673,7 +1673,7 @@ Matt
 ```
 
 ### Email 27: Training Group Pre-Session Setup
-- **Unique ID**: UF-044
+- **Unique ID**: UF-027
 - **Subject**: [Group 1] Your First AI Training Starts Tomorrow - Setup Instructions
 - **To**: Group 1 Participants
 - **From**: jameca@happyrobots.com
@@ -1717,7 +1717,7 @@ Jameca
 ```
 
 ### Email 28: Demo Day Announcement - Wednesday
-- **Unique ID**: UF-045
+- **Unique ID**: UF-028
 - **Subject**: 🎉 SEE IT LIVE: Your RNDC Automation Demo Today at 2pm
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -1755,7 +1755,7 @@ Matt
 ```
 
 ### Email 29: Week 2 Wrap-Up and Celebration
-- **Unique ID**: UF-046
+- **Unique ID**: UF-029
 - **Subject**: Week 2 Complete: You've Launched an AI Transformation! 🚀
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -1806,7 +1806,7 @@ Matt
 ## WEEKS 3-7: ONGOING PROGRAM EMAILS
 
 ### Email 30a: Weekly Training Reminder - Group 1
-- **Unique ID**: UF-047
+- **Unique ID**: UF-030a
 - **Subject**: [Reminder] AI Training Tomorrow: Module 2 - Advanced Prompting
 - **To**: evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1844,7 +1844,7 @@ Jameca
 ```
 
 ### Email 30b: Weekly Training Reminder - Group 2
-- **Unique ID**: UF-048
+- **Unique ID**: UF-030b
 - **Subject**: [Reminder] AI Training Tomorrow: Module 2 - Advanced Prompting
 - **To**: whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1882,7 +1882,7 @@ Jameca
 ```
 
 ### Email 31: Homework Feedback - Sara Soares
-- **Unique ID**: UF-049
+- **Unique ID**: UF-031
 - **Subject**: ✅ Feedback on Your Module 1 Prompts
 - **To**: sara@unefemmewines.com
 - **From**: aaron@happyrobots.com
@@ -1921,7 +1921,7 @@ Aaron
 ```
 
 ### Email 32a: Executive Coaching Session - Jen Pelka
-- **Unique ID**: UF-050
+- **Unique ID**: UF-032a
 - **Subject**: AI Executive Coaching: Building Your "Fun Brand" Assistant
 - **To**: jen@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -1948,7 +1948,7 @@ Now that the team is trained on the basics, it's time for your dedicated 1-on-1 
 ## PRE-ENGAGEMENT EMAILS (Week -1)
 
 ### Email 1: Initial Program Agreement Follow-up
-- **Unique ID**: UF-051
+- **Unique ID**: UF-001
 - **Subject**: Une Femme AI Program: Confirming Thursday's Discussion + Next Steps
 - **To**: zach@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -1987,7 +1987,7 @@ Matt
 ```
 
 ### Email 2: Detailed Documentation Package
-- **Unique ID**: UF-052
+- **Unique ID**: UF-002
 - **Subject**: [Action Required] Une Femme AI Program: Complete Documentation Package
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2034,7 +2034,7 @@ P.S. - I've included Sara's email for invoice processing. Let me know if finance
 ```
 
 ### Email 3: Team Grouping Confirmation Request
-- **Unique ID**: UF-053
+- **Unique ID**: UF-003
 - **Subject**: Quick Confirmation: Training Group Assignments for Une Femme Team
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2076,7 +2076,7 @@ Jameca
 ```
 
 ### Email 4: Executive Calendar Hold Request
-- **Unique ID**: UF-054
+- **Unique ID**: UF-004
 - **Subject**: [Executive Team] Please Block: AI Strategy Sessions Week of June 16
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2118,7 +2118,7 @@ P.S. - Sam, we'll specifically focus on how AI can accelerate key account expans
 ```
 
 ### Email 5: IT Requirements and Platform Access
-- **Unique ID**: UF-055
+- **Unique ID**: UF-005
 - **Subject**: IT Setup Required: AI Platforms for 11 Une Femme Users
 - **To**: zach@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -2163,7 +2163,7 @@ Alex
 ```
 
 ### Email 6: Finance and Invoice Processing
-- **Unique ID**: UF-056
+- **Unique ID**: UF-006
 - **Subject**: Une Femme AI Program: Invoice #1247 for Initial Payment
 - **To**: sara@unefemmewines.com
 - **From**: sheera@cardboardtoast.io
@@ -2202,7 +2202,7 @@ P.S. - Congrats on maintaining that 99.8% forecast accuracy! Looking forward to 
 ```
 
 ### Email 7: Participant Welcome and Intake Forms
-- **Unique ID**: UF-057
+- **Unique ID**: UF-007
 - **Subject**: Welcome to Une Femme's AI Transformation Journey!
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2247,7 +2247,7 @@ P.S. - Jen and Zach's vision for AI at Une Femme is inspiring. You're part of so
 ```
 
 ### Email 8: Slack Channel Setup
-- **Unique ID**: UF-058
+- **Unique ID**: UF-008
 - **Subject**: [Slack Invite] Join #unefemme-ai-program Channel
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -2286,7 +2286,7 @@ Alex
 ## WEEK 1: IDENTIFY PHASE EMAILS
 
 ### Email 9: Monday Morning Kickoff Reminder
-- **Unique ID**: UF-059
+- **Unique ID**: UF-009
 - **Subject**: [Starting in 2 Hours] Une Femme AI Kickoff - Ready to Transform?
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2328,7 +2328,7 @@ P.S. - Jen has a special message about why she's betting on AI for Une Femme's f
 ```
 
 ### Email 10: Executive Interview Scheduling - Jen Pelka
-- **Unique ID**: UF-060
+- **Unique ID**: UF-010
 - **Subject**: [Calendar] Your AI Strategy Session - Tuesday at 1pm EST
 - **To**: jen@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2365,7 +2365,7 @@ Jameca
 ```
 
 ### Email 11: Executive Interview Scheduling - Zach Pelka
-- **Unique ID**: UF-061
+- **Unique ID**: UF-011
 - **Subject**: [Calendar] Your AI Strategy Session - Wednesday at 2pm EST
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2402,7 +2402,7 @@ Jameca
 ```
 
 ### Email 12: Executive Interview Scheduling - Sam Barnes
-- **Unique ID**: UF-062
+- **Unique ID**: UF-012
 - **Subject**: [Calendar] Your AI Strategy Session - Thursday at 11am EST
 - **To**: samantha@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2439,7 +2439,7 @@ Jameca
 ```
 
 ### Email 13: Executive Interview Scheduling - Thomas Hartman
-- **Unique ID**: UF-063
+- **Unique ID**: UF-013
 - **Subject**: [Calendar] Your AI Strategy Session - Friday at 3pm EST
 - **To**: thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2476,7 +2476,7 @@ Jameca
 ```
 
 ### Email 14: Survey Launch - Tuesday
-- **Unique ID**: UF-064
+- **Unique ID**: UF-014
 - **Subject**: 🍷 Your Input Shapes Une Femme's AI Future (10 min survey)
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2516,7 +2516,7 @@ P.S. - First 5 responses get a Happy Robots swag box! 📦
 ```
 
 ### Email 15a: Survey Reminder - Micha Carter
-- **Unique ID**: UF-065
+- **Unique ID**: UF-015a
 - **Subject**: ⏰ 24 Hours Left: Une Femme AI Survey Closes Tomorrow
 - **To**: micha@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2549,7 +2549,7 @@ Jameca
 ```
 
 ### Email 15b: Survey Reminder - Joe Taverrite
-- **Unique ID**: UF-066
+- **Unique ID**: UF-015b
 - **Subject**: ⏰ 24 Hours Left: Une Femme AI Survey Closes Tomorrow
 - **To**: joe@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2582,7 +2582,7 @@ Jameca
 ```
 
 ### Email 16: Survey Final Push - Whitney Wright
-- **Unique ID**: UF-067
+- **Unique ID**: UF-016
 - **Subject**: [FINAL HOURS] Your voice matters - Une Femme AI Survey
 - **To**: whitney@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -2603,7 +2603,7 @@ Hi Whitney,
 ## PRE-ENGAGEMENT EMAILS (Week -1)
 
 ### Email 1: Initial Program Agreement Follow-up
-- **Unique ID**: UF-068
+- **Unique ID**: UF-001
 - **Subject**: Une Femme AI Program: Confirming Thursday's Discussion + Next Steps
 - **To**: zach@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -2642,7 +2642,7 @@ Matt
 ```
 
 ### Email 2: Detailed Documentation Package
-- **Unique ID**: UF-069
+- **Unique ID**: UF-002
 - **Subject**: [Action Required] Une Femme AI Program: Complete Documentation Package
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2689,7 +2689,7 @@ P.S. - I've included Sara's email for invoice processing. Let me know if finance
 ```
 
 ### Email 3: Team Grouping Confirmation Request
-- **Unique ID**: UF-070
+- **Unique ID**: UF-003
 - **Subject**: Quick Confirmation: Training Group Assignments for Une Femme Team
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2731,7 +2731,7 @@ Jameca
 ```
 
 ### Email 4: Executive Calendar Hold Request
-- **Unique ID**: UF-071
+- **Unique ID**: UF-004
 - **Subject**: [Executive Team] Please Block: AI Strategy Sessions Week of June 16
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2773,7 +2773,7 @@ P.S. - Sam, we'll specifically focus on how AI can accelerate key account expans
 ```
 
 ### Email 5: IT Requirements and Platform Access
-- **Unique ID**: UF-072
+- **Unique ID**: UF-005
 - **Subject**: IT Setup Required: AI Platforms for 11 Une Femme Users
 - **To**: zach@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -2818,7 +2818,7 @@ Alex
 ```
 
 ### Email 6: Finance and Invoice Processing
-- **Unique ID**: UF-073
+- **Unique ID**: UF-006
 - **Subject**: Une Femme AI Program: Invoice #1247 for Initial Payment
 - **To**: sara@unefemmewines.com
 - **From**: sheera@cardboardtoast.io
@@ -2857,7 +2857,7 @@ P.S. - Congrats on maintaining that 99.8% forecast accuracy! Looking forward to 
 ```
 
 ### Email 7: Participant Welcome and Intake Forms
-- **Unique ID**: UF-074
+- **Unique ID**: UF-007
 - **Subject**: Welcome to Une Femme's AI Transformation Journey!
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2902,7 +2902,7 @@ P.S. - Jen and Zach's vision for AI at Une Femme is inspiring. You're part of so
 ```
 
 ### Email 8: Slack Channel Setup
-- **Unique ID**: UF-075
+- **Unique ID**: UF-008
 - **Subject**: [Slack Invite] Join #unefemme-ai-program Channel
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -2941,7 +2941,7 @@ Alex
 ## WEEK 1: IDENTIFY PHASE EMAILS
 
 ### Email 9: Monday Morning Kickoff Reminder
-- **Unique ID**: UF-076
+- **Unique ID**: UF-009
 - **Subject**: [Starting in 2 Hours] Une Femme AI Kickoff - Ready to Transform?
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -2983,7 +2983,7 @@ P.S. - Jen has a special message about why she's betting on AI for Une Femme's f
 ```
 
 ### Email 10: Executive Interview Scheduling - Jen Pelka
-- **Unique ID**: UF-077
+- **Unique ID**: UF-010
 - **Subject**: [Calendar] Your AI Strategy Session - Tuesday at 1pm EST
 - **To**: jen@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3020,7 +3020,7 @@ Jameca
 ```
 
 ### Email 11: Executive Interview Scheduling - Zach Pelka
-- **Unique ID**: UF-078
+- **Unique ID**: UF-011
 - **Subject**: [Calendar] Your AI Strategy Session - Wednesday at 2pm EST
 - **To**: zach@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3057,7 +3057,7 @@ Jameca
 ```
 
 ### Email 12: Executive Interview Scheduling - Sam Barnes
-- **Unique ID**: UF-079
+- **Unique ID**: UF-012
 - **Subject**: [Calendar] Your AI Strategy Session - Thursday at 11am EST
 - **To**: samantha@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3094,7 +3094,7 @@ Jameca
 ```
 
 ### Email 13: Executive Interview Scheduling - Thomas Hartman
-- **Unique ID**: UF-080
+- **Unique ID**: UF-013
 - **Subject**: [Calendar] Your AI Strategy Session - Friday at 3pm EST
 - **To**: thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3131,7 +3131,7 @@ Jameca
 ```
 
 ### Email 14: Survey Launch - Tuesday
-- **Unique ID**: UF-081
+- **Unique ID**: UF-014
 - **Subject**: 🍷 Your Input Shapes Une Femme's AI Future (10 min survey)
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3171,7 +3171,7 @@ P.S. - First 5 responses get a Happy Robots swag box! 📦
 ```
 
 ### Email 15: Survey Reminder - 24 Hours
-- **Unique ID**: UF-082
+- **Unique ID**: UF-015
 - **Subject**: ⏰ 24 Hours Left: Une Femme AI Survey Closes Tomorrow
 - **To**: [Non-responders - dynamically determined]
 - **From**: jameca@happyrobots.com
@@ -3204,7 +3204,7 @@ Jameca
 ```
 
 ### Email 16: Survey Final Push - Thursday Morning
-- **Unique ID**: UF-083
+- **Unique ID**: UF-016
 - **Subject**: [FINAL HOURS] Your voice matters - Une Femme AI Survey
 - **To**: Remaining non-responders
 - **From**: matt@happyrobots.com
@@ -3233,7 +3233,7 @@ Matt
 ```
 
 ### Email 17: Executive Interview Thank You Series
-- **Unique ID**: UF-084
+- **Unique ID**: UF-017
 - **Subject**: Thank You + Key Takeaways from Our AI Strategy Session
 - **To**: Individual Executive
 - **From**: jameca@happyrobots.com
@@ -3270,7 +3270,7 @@ P.S. - [Personalized comment about something they mentioned]
 ```
 
 ### Email 18: Week 1 Progress Update to Zach
-- **Unique ID**: UF-085
+- **Unique ID**: UF-018
 - **Subject**: [Week 1 Update] Une Femme AI Program: On Track
 - **To**: zach@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -3312,7 +3312,7 @@ Matt
 ```
 
 ### Email 19: Friday Week 1 Prep for Week 2
-- **Unique ID**: UF-086
+- **Unique ID**: UF-019
 - **Subject**: [Action Required] Prepare for Monday's AI Launch - 3 Quick Steps
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3363,7 +3363,7 @@ Jameca
 ## WEEK 2: INTENSIVE LAUNCH WEEK
 
 ### Email 20: Monday Morning Launch Day
-- **Unique ID**: UF-087
+- **Unique ID**: UF-020
 - **Subject**: 🚀 LAUNCH DAY: Your AI Transformation Begins Now!
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -3401,7 +3401,7 @@ Matt
 ```
 
 ### Email 21: Session Reminder - Executive AI Findings
-- **Unique ID**: UF-088
+- **Unique ID**: UF-021
 - **Subject**: [Starting in 30 min] Executive AI Findings - Link Inside
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3435,7 +3435,7 @@ Jameca
 ```
 
 ### Email 22: Session Reminder - Sprint Planning
-- **Unique ID**: UF-089
+- **Unique ID**: UF-022
 - **Subject**: [Starting in 30 min] AI Sprint Planning - Link Inside
 - **To**: zach@unefemmewines.com, kait@unefemmewines.com, joe@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3469,7 +3469,7 @@ Jameca
 ```
 
 ### Email 23: Session Reminder - All-Team Launch
-- **Unique ID**: UF-090
+- **Unique ID**: UF-023
 - **Subject**: [Starting in 30 min] All-Team AI Launch - Link Inside
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3502,7 +3502,7 @@ Jameca
 ```
 
 ### Email 24: Session Reminder - Group 1 Training
-- **Unique ID**: UF-091
+- **Unique ID**: UF-024
 - **Subject**: [Starting in 30 min] AI Training - Group 1 - Link Inside
 - **To**: evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3535,7 +3535,7 @@ Jameca
 ```
 
 ### Email 25: Platform Troubleshooting Support - Evyn Cameron
-- **Unique ID**: UF-092
+- **Unique ID**: UF-025
 - **Subject**: ⚡ Quick Fix: AI Platform Access Issues
 - **To**: evyn@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -3576,7 +3576,7 @@ Alex
 ```
 
 ### Email 26: Daily Sprint Update - Tuesday
-- **Unique ID**: UF-093
+- **Unique ID**: UF-026
 - **Subject**: [Sprint Update] Day 2: RNDC Scorecard Taking Shape!
 - **To**: zach@unefemmewines.com, kait@unefemmewines.com, joe@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -3616,7 +3616,7 @@ Matt
 ```
 
 ### Email 27: Training Group Pre-Session Setup
-- **Unique ID**: UF-094
+- **Unique ID**: UF-027
 - **Subject**: [Group 1] Your First AI Training Starts Tomorrow - Setup Instructions
 - **To**: Group 1 Participants
 - **From**: jameca@happyrobots.com
@@ -3660,7 +3660,7 @@ Jameca
 ```
 
 ### Email 28: Demo Day Announcement - Wednesday
-- **Unique ID**: UF-095
+- **Unique ID**: UF-028
 - **Subject**: 🎉 SEE IT LIVE: Your RNDC Automation Demo Today at 2pm
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -3698,7 +3698,7 @@ Matt
 ```
 
 ### Email 29: Week 2 Wrap-Up and Celebration
-- **Unique ID**: UF-096
+- **Unique ID**: UF-029
 - **Subject**: Week 2 Complete: You've Launched an AI Transformation! 🚀
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -3749,7 +3749,7 @@ Matt
 ## WEEKS 3-7: ONGOING PROGRAM EMAILS
 
 ### Email 30a: Weekly Training Reminder - Group 1
-- **Unique ID**: UF-097
+- **Unique ID**: UF-030a
 - **Subject**: [Reminder] AI Training Tomorrow: Module 2 - Advanced Prompting
 - **To**: evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3787,7 +3787,7 @@ Jameca
 ```
 
 ### Email 30b: Weekly Training Reminder - Group 2
-- **Unique ID**: UF-098
+- **Unique ID**: UF-030b
 - **Subject**: [Reminder] AI Training Tomorrow: Module 2 - Advanced Prompting
 - **To**: whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3825,7 +3825,7 @@ Jameca
 ```
 
 ### Email 31: Homework Feedback - Sara Soares
-- **Unique ID**: UF-099
+- **Unique ID**: UF-031
 - **Subject**: ✅ Feedback on Your Module 1 Prompts
 - **To**: sara@unefemmewines.com
 - **From**: aaron@happyrobots.com
@@ -3864,7 +3864,7 @@ Aaron
 ```
 
 ### Email 32: Executive Coaching Session Scheduling
-- **Unique ID**: UF-100
+- **Unique ID**: UF-032+
 - **Subject**: [Executive] Your Weekly AI Coaching Slot
 - **To**: Individual Executive
 - **From**: matt@happyrobots.com
@@ -3905,7 +3905,7 @@ Matt
 ```
 
 ### Email 33: Mid-Point Check-In Survey
-- **Unique ID**: UF-101
+- **Unique ID**: UF-033
 - **Subject**: Quick Pulse Check: How's Your AI Journey Going? (3 min survey)
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -3939,7 +3939,7 @@ Jameca
 ```
 
 ### Email 34: Calabrai Platform Launch
-- **Unique ID**: UF-102
+- **Unique ID**: UF-034
 - **Subject**: 🎯 NEW: Your AI Prompt Library is Live (Calabrai Platform)
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -3986,7 +3986,7 @@ Alex
 ```
 
 ### Email 35: Success Story Spotlight Series
-- **Unique ID**: UF-103
+- **Unique ID**: UF-035+
 - **Subject**: 🌟 AI WIN: How [Name] Saved [X] Hours This Week
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -4022,7 +4022,7 @@ Jameca
 ```
 
 ### Email 36: Office Hours Weekly Announcement
-- **Unique ID**: UF-104
+- **Unique ID**: UF-036+
 - **Subject**: [Office Hours] This Week: RNDC Automation Deep Dive
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -4063,7 +4063,7 @@ Matt
 ```
 
 ### Email 37: Technical Troubleshooting - Kait Skye
-- **Unique ID**: UF-105
+- **Unique ID**: UF-037
 - **Subject**: 🛠️ Help with your Calabrai account
 - **To**: kait@unefemmewines.com
 - **From**: alex@happyrobots.com
@@ -4101,7 +4101,7 @@ Alex
 ## WEEK 8: PROGRAM WRAP-UP EMAILS
 
 ### Email 38: Final Week Kickoff
-- **Unique ID**: UF-106
+- **Unique ID**: UF-038
 - **Subject**: Final Week: Let's Celebrate Your AI Transformation! 🎉
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -4140,7 +4140,7 @@ Matt
 ```
 
 ### Email 39: Final Assessment Instructions
-- **Unique ID**: UF-107
+- **Unique ID**: UF-039
 - **Subject**: [Action Required] Complete Your AI Skills Assessment - Earn Your Certificate!
 - **To**: evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -4186,7 +4186,7 @@ Jameca
 ```
 
 ### Email 40: Executive Final Presentation Invitation
-- **Unique ID**: UF-108
+- **Unique ID**: UF-040
 - **Subject**: [Executives + VIPs] AI Program Results: ROI Revealed
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, kait@unefemmewines.com, sara@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -4227,7 +4227,7 @@ Matt
 ```
 
 ### Email 41: Final Celebration Invitation
-- **Unique ID**: UF-109
+- **Unique ID**: UF-041
 - **Subject**: 🥂 Celebrate: Une Femme AI Graduation Party!
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -4270,7 +4270,7 @@ Matt & Jameca
 ```
 
 ### Email 42: Program Completion Package
-- **Unique ID**: UF-110
+- **Unique ID**: UF-042
 - **Subject**: 🎓 Your Une Femme AI Transformation Toolkit - Everything You Need
 - **To**: jen@unefemmewines.com, zach@unefemmewines.com, samantha@unefemmewines.com, thomas@unefemmewines.com, evyn@unefemmewines.com, micha@unefemmewines.com, sara@unefemmewines.com, va@unefemmewines.com, whitney@unefemmewines.com, joe@unefemmewines.com, kait@unefemmewines.com, kim@unefemmewines.com
 - **From**: jameca@happyrobots.com
@@ -4327,7 +4327,7 @@ P.S. - You're always welcome to reach out with questions. Once Happy Robots fami
 ```
 
 ### Email 43: Phase 2 Teaser
-- **Unique ID**: UF-111
+- **Unique ID**: UF-043
 - **Subject**: Ready for More? Une Femme AI Phase 2 Preview
 - **To**: zach@unefemmewines.com
 - **From**: matt@happyrobots.com
@@ -4375,7 +4375,7 @@ Matt
 ## INTERNAL COORDINATION EMAILS
 
 ### Email 44-50: Daily Stand-up Summaries (Week 2)
-- **Unique ID**: UF-112
+- **Unique ID**: UF-044 through UF-050
 - **Subject**: [INTERNAL] Une Femme Day [X] Stand-up Notes
 - **To**: Happy Robots Team
 - **From**: matt@happyrobots.com
@@ -4418,7 +4418,7 @@ Questions? Slack me.
 ```
 
 ### Email 51: Weekly Resource Planning
-- **Unique ID**: UF-113
+- **Unique ID**: UF-051+
 - **Subject**: [INTERNAL] Une Femme Week [X] Resource Planning
 - **To**: Happy Robots Team
 - **From**: jameca@happyrobots.com
@@ -4462,7 +4462,7 @@ Jameca
 ```
 
 ### Email 52: Risk Escalation Template
-- **Unique ID**: UF-114
+- **Unique ID**: UF-052+
 - **Subject**: [URGENT - INTERNAL] Une Femme Risk: [Issue]
 - **To**: matt@happyrobots.com, Relevant Team
 - **From**: Team Member
