@@ -40,6 +40,7 @@ function createEmailTrackerTemplate() {
   // Create sheets
   createConfigSheet(ss, config);
   createEmailTracker(ss, config);
+  createDependencyDashboard(ss, config);
   createDashboard(ss, config);
   createContactsSheet(ss, config);
   createScheduleOverview(ss, config);
@@ -126,58 +127,61 @@ function createConfigSheet(ss, config) {
 function createEmailTracker(ss, config) {
   let sheet = ss.insertSheet("Email Tracker");
   
-  // Headers
+  // Headers - Updated to include dependencies and flexibility
   const headers = [
     "ID", "Phase", "Category", "Priority", "From (HR)*", "To (UF)*", "CC*", 
-    "Target Date", "Flexibility", "Subject", "Content", "Attachments", 
-    "Dependencies", "Body Copy", "Status", "Date Sent", "Response Req?", 
-    "Response Due", "Response Rcvd", "Follow-up?", "Notes", "Created", "Modified"
+    "Target Date", "Flexibility", "Dependencies", "Subject", "Content", "Attachments", 
+    "Body Copy", "Status", "Date Sent", "Response Req?", 
+    "Response Due", "Response Rcvd", "Follow-up?", "Notes", "Earliest Send", "Latest Send", "Created", "Modified"
   ];
   
-  sheet.getRange("A1:W1").setValues([headers])
+  sheet.getRange("A1:Y1").setValues([headers])
     .setBackground(config.primaryColor)
     .setFontColor("#FFFFFF")
     .setFontWeight("bold");
   
   // Add note about multiple selections
-  sheet.getRange("A24").setValue("* Multiple selections supported")
+  sheet.getRange("A26").setValue("* Multiple selections supported")
     .setFontStyle("italic")
     .setFontColor("#666666");
-  sheet.getRange("A25").setValue("Format: 'Name1, Name2, Name3'")
+  sheet.getRange("A27").setValue("Format: 'Name1, Name2, Name3'")
     .setFontStyle("italic")
     .setFontColor("#666666");
   
   // Set column widths
   sheet.setColumnWidth(1, 80);  // ID
-  sheet.setColumnWidth(10, 300); // Subject
-  sheet.setColumnWidth(11, 400); // Content
+  sheet.setColumnWidth(10, 120); // Dependencies
+  sheet.setColumnWidth(11, 300); // Subject
+  sheet.setColumnWidth(12, 400); // Content
   sheet.setColumnWidth(14, 500); // Body Copy
   sheet.setColumnWidth(21, 200); // Notes
   
   // Formulas for row 2
   sheet.getRange("A2").setFormula('=IF(B2<>"","UF-"&TEXT(ROW()-1,"000"),"")');
   sheet.getRange("R2").setFormula('=IF(Q2="Y",WORKDAY(P2,2),"")');
-  sheet.getRange("V2").setFormula('=IF(B2<>"",NOW(),"")');
-  sheet.getRange("W2").setFormula('=IF(OR(B2<>B1,C2<>C1,D2<>D1,E2<>E1,F2<>F1,G2<>G1,H2<>H1,I2<>I1,J2<>J1,K2<>K1,L2<>L1,M2<>M1,N2<>N1,O2<>O1,P2<>P1,Q2<>Q1,S2<>S1,T2<>T1,U2<>U1),NOW(),W1)');
+  sheet.getRange("V2").setFormula('=IF(B2<>"",calculateEarliestSendDate(J2),"")'); // Dependencies check
+  sheet.getRange("W2").setFormula('=IF(I2="HARD",H2,IF(I2="FLEX",H2+2,H2))'); // Flexibility buffer
+  sheet.getRange("X2").setFormula('=IF(B2<>"",NOW(),"")');
+  sheet.getRange("Y2").setFormula('=IF(OR(B2<>B1,C2<>C1,D2<>D1,E2<>E1,F2<>F1,G2<>G1,H2<>H1,I2<>I1,J2<>J1,K2<>K1,L2<>L1,M2<>M1,N2<>N1,O2<>O1,P2<>P1,Q2<>Q1,S2<>S1,T2<>T1,U2<>U1),NOW(),Y1)');
   
   // Copy formulas down
-  sheet.getRange("A2:W2").copyTo(sheet.getRange("A3:W100"));
+  sheet.getRange("A2:Y2").copyTo(sheet.getRange("A3:Y100"));
   
-  // Pre-populate with critical Week 1 emails FIRST (before validation)
+  // Pre-populate with critical Week 1 emails FIRST (including dependencies)
   const week1Emails = [
-    ["Week 1", "Kickoff", "High", "Matt, Danielle", "All Team", "Zach Pelka", new Date(2024, 11, 16), "HARD", "[Une Femme] Welcome & Monday Kickoff Details", "Agenda, Zoom link, AI setup instructions", "Kickoff deck", "", "Team,\n\nWelcome to the Une Femme Wines AI Transformation program! We're excited to begin this 8-week journey together.\n\nKickoff Meeting Details:\nDate: Monday, December 16th\nTime: 10:00 AM PST\nZoom: [link]\n\nAgenda:\n- Project overview & timeline\n- Team introductions\n- Success metrics\n- Q&A\n\nPlease confirm attendance.\n\nBest,\nMatt & Danielle", "Draft"],
-    ["Week 1", "Survey", "High", "Alex", "All 12 Participants", "Leadership Team", new Date(2024, 11, 17), "HARD", "[Une Femme] AI Readiness Survey - Due Thursday", "Survey link, 15 min completion time", "", "", "Hi Team,\n\nAs part of our AI readiness assessment, please complete this brief survey by Thursday, December 19th.\n\nSurvey Link: [link]\nTime Required: 15 minutes\n\nYour insights will help us tailor the program to Une Femme's specific needs around:\n- Distributor management\n- Demand forecasting  \n- Brand content creation\n\nThank you!\nAlex", "Draft"],
-    ["Week 1", "Scheduling", "High", "Danielle", "Jen Pelka, Sam Barnes, Thomas Hartman", "Matt", new Date(2024, 11, 16), "ASAP", "[Une Femme] Executive Interview Confirmation", "Individual calendar invites", "Interview guide", "", "Hi [Name],\n\nI'm scheduling your 45-minute executive interview for our AI readiness assessment.\n\nAvailable times this week:\n- Tuesday 2-3 PM\n- Wednesday 10-11 AM\n- Thursday 3-4 PM\n\nWe'll discuss:\n- Your strategic priorities\n- Current operational challenges\n- AI opportunities in your area\n\nPlease let me know your preferred time.\n\nBest,\nDanielle", "Draft"],
-    ["Pre-Engagement", "Contract", "High", "Matt", "Zach Pelka", "Jen Pelka", new Date(2024, 11, 9), "HARD", "[Une Femme] Beta Pilot Agreement & Next Steps", "SOW, timeline, intake form, AI requirements", "All documentation", "", "Hi Zach,\n\nAttached you'll find our Beta Pilot Agreement and next steps documentation:\n\n1. Statement of Work (SOW)\n2. 8-week timeline\n3. Client intake form\n4. AI platform requirements\n\nPlease review and let me know if you have any questions. We're targeting a December 16th kickoff.\n\nLooking forward to transforming Une Femme's operations!\n\nBest,\nMatt", "Ready"],
-    ["Pre-Engagement", "Platform Setup", "High", "James", "All 11 Users", "IT Team", new Date(2024, 11, 10), "HARD", "[Une Femme] AI Platform Setup Required by Week 2", "ChatGPT Teams and Claude Teams setup instructions", "Setup guide", "", "Team,\n\nTo participate in the AI pilot program, please set up these platforms by Week 2:\n\n1. ChatGPT Teams account\n2. Claude Teams account\n\nSetup instructions attached. This should take about 15 minutes.\n\nIf you need assistance, please reach out to James or myself.\n\nThanks,\nJames", "Draft"],
-    ["Week 1", "Status Update", "Medium", "Matt", "Zach Pelka", "Project Team", new Date(2024, 11, 20), "HARD", "[Une Femme] Week 1 Status & Preliminary Findings", "Survey response rate, platform status, sprint focus", "Status report", "", "Hi Zach,\n\nWeek 1 Status Update:\n\nCompleted:\n- Kickoff meeting (100% attendance)\n- Executive interviews (4/4 complete)\n- Survey launch\n\nMetrics:\n- Survey response rate: 83% (10/12)\n- Platform setup: 78% complete\n\nNext Week Focus:\n- Complete platform setup\n- Begin training modules\n- Launch integration sprint\n\nFull report attached.\n\nBest,\nMatt", "Draft"],
-    ["Week 2", "Training", "High", "Alex, Danielle", "Group 1 (Evyn, Micha, Sara)", "All Executives", new Date(2024, 11, 23), "HARD", "[Une Femme] Training Module 1 - Operations Group", "Monday 2PM, Module 1 materials, homework", "Training deck", "", "Hi Operations Team,\n\nYour first AI training session is scheduled:\n\nWhen: Monday, December 23rd at 2:00 PM PST\nDuration: 90 minutes\nZoom: [link]\n\nModule 1 Topics:\n- AI fundamentals for operations\n- Demand forecasting applications\n- Inventory optimization\n\nPre-work: Review attached materials (30 mins)\n\nSee you Monday!\nAlex & Danielle", "Draft"],
-    ["Week 2", "Training", "High", "Alex, Danielle", "Group 2 (Whitney, Joe, Kait, Kimberly)", "All Executives", new Date(2024, 11, 23), "HARD", "[Une Femme] Training Module 1 - Sales/Marketing Group", "Monday 3:30PM, Module 1 materials, homework", "Training deck", "", "Hi Sales & Marketing Team,\n\nYour first AI training session is scheduled:\n\nWhen: Monday, December 23rd at 3:30 PM PST\nDuration: 90 minutes\nZoom: [link]\n\nModule 1 Topics:\n- AI for sales enablement\n- Content creation & personalization\n- Customer insights & analytics\n\nPre-work: Review attached materials (30 mins)\n\nExcited to get started!\nAlex & Danielle", "Draft"],
-    ["Week 2", "Sprint", "High", "Matt, James", "Sprint Team", "Zach Pelka, Thomas Hartman", new Date(2024, 11, 23), "HARD", "[Une Femme] Integration Sprint Kickoff - Monday", "3-day sprint agenda, requirements, access needs", "Sprint guide", "", "Sprint Team,\n\nOur 3-day integration sprint begins Monday, December 23rd.\n\nSchedule:\nDay 1: Requirements gathering & planning\nDay 2: Development & configuration\nDay 3: Testing & deployment\n\nDaily Schedule: 9 AM - 5 PM PST\nLocation: Virtual (Zoom link attached)\n\nPlease ensure you have:\n- System access credentials\n- Development environment setup\n- Sprint requirements doc reviewed\n\nLet's build something amazing!\nMatt & James", "Draft"],
-    ["Week 3", "Deliverable", "High", "Matt, Alex", "All Executives", "Board Members", new Date(2024, 11, 30), "HARD", "[Une Femme] Formal Assessment Presentation", "Comprehensive findings, readiness assessment, recommendations", "Assessment report", "", "Executive Team,\n\nPlease join us for the formal assessment presentation:\n\nDate: Monday, December 30th\nTime: 10:00 AM PST\nDuration: 60 minutes\nLocation: Conference Room A / Zoom hybrid\n\nAgenda:\n- Comprehensive readiness assessment\n- Key findings & insights\n- Strategic recommendations\n- Implementation roadmap\n- Q&A\n\nFull assessment report will be shared prior to the meeting.\n\nBest regards,\nMatt & Alex", "Draft"]
+    ["Week 1", "Kickoff", "High", "Matt, Danielle", "All Team", "Zach Pelka", new Date(2024, 11, 16), "HARD", "", "[Une Femme] Welcome & Monday Kickoff Details", "Agenda, Zoom link, AI setup instructions", "Kickoff deck", "Team,\n\nWelcome to the Une Femme Wines AI Transformation program! We're excited to begin this 8-week journey together.\n\nKickoff Meeting Details:\nDate: Monday, December 16th\nTime: 10:00 AM PST\nZoom: [link]\n\nAgenda:\n- Project overview & timeline\n- Team introductions\n- Success metrics\n- Q&A\n\nPlease confirm attendance.\n\nBest,\nMatt & Danielle", "Draft"],
+    ["Week 1", "Survey", "High", "Alex", "All 12 Participants", "Leadership Team", new Date(2024, 11, 17), "HARD", "UF-001", "[Une Femme] AI Readiness Survey - Due Thursday", "Survey link, 15 min completion time", "", "Hi Team,\n\nAs part of our AI readiness assessment, please complete this brief survey by Thursday, December 19th.\n\nSurvey Link: [link]\nTime Required: 15 minutes\n\nYour insights will help us tailor the program to Une Femme's specific needs around:\n- Distributor management\n- Demand forecasting  \n- Brand content creation\n\nThank you!\nAlex", "Draft"],
+    ["Week 1", "Scheduling", "High", "Danielle", "Jen Pelka, Sam Barnes, Thomas Hartman", "Matt", new Date(2024, 11, 16), "HARD", "UF-001", "[Une Femme] Executive Interview Confirmation", "Individual calendar invites", "Interview guide", "Hi [Name],\n\nI'm scheduling your 45-minute executive interview for our AI readiness assessment.\n\nAvailable times this week:\n- Tuesday 2-3 PM\n- Wednesday 10-11 AM\n- Thursday 3-4 PM\n\nWe'll discuss:\n- Your strategic priorities\n- Current operational challenges\n- AI opportunities in your area\n\nPlease let me know your preferred time.\n\nBest,\nDanielle", "Draft"],
+    ["Pre-Engagement", "Contract", "High", "Matt", "Zach Pelka", "Jen Pelka", new Date(2024, 11, 9), "HARD", "", "[Une Femme] Beta Pilot Agreement & Next Steps", "SOW, timeline, intake form, AI requirements", "All documentation", "Hi Zach,\n\nAttached you'll find our Beta Pilot Agreement and next steps documentation:\n\n1. Statement of Work (SOW)\n2. 8-week timeline\n3. Client intake form\n4. AI platform requirements\n\nPlease review and let me know if you have any questions. We're targeting a December 16th kickoff.\n\nLooking forward to transforming Une Femme's operations!\n\nBest,\nMatt", "Ready"],
+    ["Pre-Engagement", "Platform Setup", "High", "James", "All 11 Users", "IT Team", new Date(2024, 11, 10), "HARD", "UF-001", "[Une Femme] AI Platform Setup Required by Week 2", "ChatGPT Teams and Claude Teams setup instructions", "Setup guide", "Team,\n\nTo participate in the AI pilot program, please set up these platforms by Week 2:\n\n1. ChatGPT Teams account\n2. Claude Teams account\n\nSetup instructions attached. This should take about 15 minutes.\n\nIf you need assistance, please reach out to James or myself.\n\nThanks,\nJames", "Draft"],
+    ["Week 1", "Status Update", "Medium", "Matt", "Zach Pelka", "Project Team", new Date(2024, 11, 20), "FLEX", "UF-002,UF-003", "[Une Femme] Week 1 Status & Preliminary Findings", "Survey response rate, platform status, sprint focus", "Status report", "Hi Zach,\n\nWeek 1 Status Update:\n\nCompleted:\n- Kickoff meeting (100% attendance)\n- Executive interviews (4/4 complete)\n- Survey launch\n\nMetrics:\n- Survey response rate: 83% (10/12)\n- Platform setup: 78% complete\n\nNext Week Focus:\n- Complete platform setup\n- Begin training modules\n- Launch integration sprint\n\nFull report attached.\n\nBest,\nMatt", "Draft"],
+    ["Week 2", "Training", "High", "Alex, Danielle", "Group 1 (Evyn, Micha, Sara)", "All Executives", new Date(2024, 11, 23), "HARD", "UF-005", "[Une Femme] Training Module 1 - Operations Group", "Monday 2PM, Module 1 materials, homework", "Training deck", "Hi Operations Team,\n\nYour first AI training session is scheduled:\n\nWhen: Monday, December 23rd at 2:00 PM PST\nDuration: 90 minutes\nZoom: [link]\n\nModule 1 Topics:\n- AI fundamentals for operations\n- Demand forecasting applications\n- Inventory optimization\n\nPre-work: Review attached materials (30 mins)\n\nSee you Monday!\nAlex & Danielle", "Draft"],
+    ["Week 2", "Training", "High", "Alex, Danielle", "Group 2 (Whitney, Joe, Kait, Kimberly)", "All Executives", new Date(2024, 11, 23), "HARD", "UF-005", "[Une Femme] Training Module 1 - Sales/Marketing Group", "Monday 3:30PM, Module 1 materials, homework", "Training deck", "Hi Sales & Marketing Team,\n\nYour first AI training session is scheduled:\n\nWhen: Monday, December 23rd at 3:30 PM PST\nDuration: 90 minutes\nZoom: [link]\n\nModule 1 Topics:\n- AI for sales enablement\n- Content creation & personalization\n- Customer insights & analytics\n\nPre-work: Review attached materials (30 mins)\n\nExcited to get started!\nAlex & Danielle", "Draft"],
+    ["Week 2", "Sprint", "High", "Matt, James", "Sprint Team", "Zach Pelka, Thomas Hartman", new Date(2024, 11, 23), "HARD", "UF-002", "[Une Femme] Integration Sprint Kickoff - Monday", "3-day sprint agenda, requirements, access needs", "Sprint guide", "Sprint Team,\n\nOur 3-day integration sprint begins Monday, December 23rd.\n\nSchedule:\nDay 1: Requirements gathering & planning\nDay 2: Development & configuration\nDay 3: Testing & deployment\n\nDaily Schedule: 9 AM - 5 PM PST\nLocation: Virtual (Zoom link attached)\n\nPlease ensure you have:\n- System access credentials\n- Development environment setup\n- Sprint requirements doc reviewed\n\nLet's build something amazing!\nMatt & James", "Draft"],
+    ["Week 3", "Deliverable", "High", "Matt, Alex", "All Executives", "Board Members", new Date(2024, 11, 30), "HARD", "UF-002,UF-007,UF-008", "[Une Femme] Formal Assessment Presentation", "Comprehensive findings, readiness assessment, recommendations", "Assessment report", "Executive Team,\n\nPlease join us for the formal assessment presentation:\n\nDate: Monday, December 30th\nTime: 10:00 AM PST\nDuration: 60 minutes\nLocation: Conference Room A / Zoom hybrid\n\nAgenda:\n- Comprehensive readiness assessment\n- Key findings & insights\n- Strategic recommendations\n- Implementation roadmap\n- Q&A\n\nFull assessment report will be shared prior to the meeting.\n\nBest regards,\nMatt & Alex", "Draft"]
   ];
   
-  sheet.getRange("B2:O11").setValues(week1Emails);
+  sheet.getRange("B2:P11").setValues(week1Emails);
   
   // NOW set up data validations (after data is populated)
   const configSheet = ss.getSheetByName("Configuration");
@@ -215,19 +219,28 @@ function createEmailTracker(ss, config) {
       .build()
   );
   
+  // Flexibility dropdown - ADD THIS NEW VALIDATION
+  sheet.getRange("I2:I100").setDataValidation(
+    SpreadsheetApp.newDataValidation()
+      .setAllowInvalid(false)
+      .requireValueInList(["HARD", "FLEX", "ASAP"])
+      .setHelpText("HARD = Cannot be moved, FLEX = Can adjust ±1-2 days, ASAP = Immediate action required")
+      .build()
+  );
+  
+  // Dependencies dropdown - ADD THIS NEW VALIDATION
+  sheet.getRange("J2:J100").setDataValidation(
+    SpreadsheetApp.newDataValidation()
+      .setAllowInvalid(true)
+      .setHelpText("Enter comma-separated email IDs that must be completed before this email can be sent (e.g., UF-001, UF-002)")
+      .build()
+  );
+  
   // Status dropdown - start from row 12 to avoid overwriting pre-populated data
   sheet.getRange("O12:O100").setDataValidation(
     SpreadsheetApp.newDataValidation()
       .setAllowInvalid(false)
       .requireValueInList(["Draft", "Ready", "Sent", "Confirmed", "No Response", "Cancelled"])
-      .build()
-  );
-  
-  // Flexibility dropdown - start from row 12 to avoid overwriting pre-populated data
-  sheet.getRange("I12:I100").setDataValidation(
-    SpreadsheetApp.newDataValidation()
-      .setAllowInvalid(false)
-      .requireValueInList(["HARD", "FLEX", "ASAP"])
       .build()
   );
   
@@ -251,6 +264,182 @@ function createEmailTracker(ss, config) {
   
   // Add visual enhancements
   enhanceEmailTrackerVisuals(sheet);
+}
+
+// NEW HELPER FUNCTIONS for dependency checking
+function calculateEarliestSendDate(dependenciesText) {
+  if (!dependenciesText || dependenciesText.trim() === "") {
+    return new Date(); // No dependencies, can send anytime
+  }
+  
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const tracker = ss.getSheetByName("Email Tracker");
+  const data = tracker.getDataRange().getValues();
+  
+  const dependencies = dependenciesText.split(',').map(dep => dep.trim());
+  let latestDate = new Date();
+  
+  dependencies.forEach(depId => {
+    for (let i = 1; i < data.length; i++) {
+      if (data[i][0] === depId && data[i][14] === "Sent") { // Column A (ID) and O (Status)
+        const sentDate = data[i][15]; // Column P (Date Sent)
+        if (sentDate instanceof Date && sentDate > latestDate) {
+          latestDate = sentDate;
+        }
+      }
+    }
+  });
+  
+  return latestDate;
+}
+
+function checkDependencies(dependenciesText, currentStatus) {
+  if (!dependenciesText || dependenciesText.trim() === "" || currentStatus === "Sent") {
+    return true; // No dependencies or already sent
+  }
+  
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const tracker = ss.getSheetByName("Email Tracker");
+  const data = tracker.getDataRange().getValues();
+  
+  const dependencies = dependenciesText.split(',').map(dep => dep.trim());
+  
+  for (let depId of dependencies) {
+    let depCompleted = false;
+    for (let i = 1; i < data.length; i++) {
+      if (data[i][0] === depId && data[i][14] === "Sent") { // Column A (ID) and O (Status)
+        depCompleted = true;
+        break;
+      }
+    }
+    if (!depCompleted) {
+      return false; // At least one dependency not completed
+    }
+  }
+  
+  return true; // All dependencies completed
+}
+
+function validateDependencies() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const tracker = ss.getSheetByName("Email Tracker");
+  const data = tracker.getDataRange().getValues();
+  
+  const violations = [];
+  
+  for (let i = 1; i < data.length; i++) {
+    const id = data[i][0];
+    const dependencies = data[i][9]; // Column J
+    const status = data[i][14]; // Column O
+    
+    if (dependencies && dependencies.trim() !== "" && status !== "Sent") {
+      if (!checkDependencies(dependencies, status)) {
+        violations.push({
+          id: id,
+          subject: data[i][10], // Column K
+          dependencies: dependencies,
+          status: status
+        });
+      }
+    }
+  }
+  
+  return violations;
+}
+
+// NEW FUNCTION: Create Dependency Dashboard
+function createDependencyDashboard(ss, config) {
+  let sheet = ss.insertSheet("Dependency Dashboard");
+  
+  // Title
+  sheet.getRange("A1:J1").merge()
+    .setValue("Email Dependencies & Critical Path Dashboard")
+    .setBackground("#FF5722")
+    .setFontColor("#FFFFFF")
+    .setFontSize(16)
+    .setFontWeight("bold")
+    .setHorizontalAlignment("center");
+  
+  // Critical Path Status
+  sheet.getRange("A3").setValue("CRITICAL PATH STATUS").setFontWeight("bold").setFontSize(12);
+  
+  // Dependency Violations Alert
+  sheet.getRange("A5").setValue("⚠️ DEPENDENCY VIOLATIONS");
+  sheet.getRange("A6").setFormula('=IFERROR(QUERY(\'Email Tracker\'!A:Y,"SELECT A,K,J WHERE O<>\'Sent\' AND J<>\'\' ORDER BY H",0),"✅ No dependency violations found")');
+  
+  // Hard Deadlines This Week
+  sheet.getRange("A10").setValue("🔴 HARD DEADLINES - NEXT 7 DAYS").setFontWeight("bold");
+  sheet.getRange("A11:F11").setValues([["ID", "Subject", "Target Date", "Status", "Dependencies", "Risk Level"]]).setBackground("#FFCDD2");
+  sheet.getRange("A12").setFormula('=IFERROR(QUERY(\'Email Tracker\'!A:Y,"SELECT A,K,H,O,J WHERE I=\'HARD\' AND H>=date \'"&TEXT(TODAY(),"yyyy-mm-dd")&"\' AND H<=date \'"&TEXT(TODAY()+7,"yyyy-mm-dd")&"\' ORDER BY H",0),"No hard deadlines in next 7 days")');
+  
+  // ASAP Items
+  sheet.getRange("A18").setValue("🔥 URGENT ITEMS (ASAP)").setFontWeight("bold");
+  sheet.getRange("A19:E19").setValues([["ID", "Subject", "Status", "Created", "Hours Old"]]).setBackground("#FF9800");
+  sheet.getRange("A20").setFormula('=IFERROR(QUERY(\'Email Tracker\'!A:Y,"SELECT A,K,O,X WHERE I=\'ASAP\' AND O<>\'Sent\' ORDER BY X",0),"No urgent items")');
+  
+  // Flexibility Buffer Analysis
+  sheet.getRange("A25").setValue("📊 FLEXIBILITY BUFFER ANALYSIS").setFontWeight("bold");
+  
+  const flexMetrics = [
+    ["Total HARD deadlines:", '=COUNTIF(\'Email Tracker\'!I:I,"HARD")'],
+    ["HARD items at risk (past due):", '=COUNTIFS(\'Email Tracker\'!I:I,"HARD",\'Email Tracker\'!H:H,"<"&TODAY(),\'Email Tracker\'!O:O,"<>Sent")'],
+    ["Total FLEX items:", '=COUNTIF(\'Email Tracker\'!I:I,"FLEX")'],
+    ["FLEX items in buffer zone:", '=COUNTIFS(\'Email Tracker\'!I:I,"FLEX",\'Email Tracker\'!H:H,">="&TODAY(),\'Email Tracker\'!H:H,"<="&TODAY()+2)'],
+    ["Average buffer utilization:", '=IFERROR(AVERAGE(IF(\'Email Tracker\'!I:I="FLEX",\'Email Tracker\'!H:H-\'Email Tracker\'!V:V,"")),0)&" days"']
+  ];
+  
+  let metricRow = 26;
+  flexMetrics.forEach(metric => {
+    sheet.getRange(metricRow, 1).setValue(metric[0]);
+    sheet.getRange(metricRow, 3).setFormula(metric[1]);
+    metricRow++;
+  });
+  
+  // Visual Timeline
+  sheet.getRange("F3").setValue("CRITICAL PATH TIMELINE").setFontWeight("bold");
+  sheet.getRange("F4").setValue("Next 14 Days - HARD Deadlines Only");
+  
+  // Create a simple timeline view
+  for (let day = 0; day < 14; day++) {
+    let dayRow = 5 + day;
+    let dateFormula = `=TODAY()+${day}`;
+    sheet.getRange(dayRow, 6).setFormula(dateFormula).setNumberFormat("MM/dd EEE");
+    
+    // Count HARD items for this date
+    let countFormula = `=COUNTIFS('Email Tracker'!I:I,"HARD",'Email Tracker'!H:H,F${dayRow},'Email Tracker'!O:O,"<>Sent")`;
+    sheet.getRange(dayRow, 7).setFormula(countFormula);
+    
+    // Show email subjects for this date
+    let emailsFormula = `=IFERROR(JOIN(", ",QUERY('Email Tracker'!A:Y,"SELECT K WHERE I='HARD' AND H=date '"&TEXT(F${dayRow},"yyyy-mm-dd")&"' AND O<>'Sent'",0)),"")`;
+    sheet.getRange(dayRow, 8, 1, 2).merge();
+    sheet.getRange(dayRow, 8).setFormula(emailsFormula).setWrap(true);
+  }
+  
+  // Add conditional formatting for risk levels
+  const riskRules = [
+    SpreadsheetApp.newConditionalFormatRule()
+      .whenFormulaSatisfied('=G5>3')
+      .setBackground("#FF5722")
+      .setFontColor("#FFFFFF")
+      .setRanges([sheet.getRange("F5:I18")])
+      .build(),
+    SpreadsheetApp.newConditionalFormatRule()
+      .whenFormulaSatisfied('=AND(G5>1,G5<=3)')
+      .setBackground("#FF9800")
+      .setRanges([sheet.getRange("F5:I18")])
+      .build(),
+    SpreadsheetApp.newConditionalFormatRule()
+      .whenFormulaSatisfied('=G5=1')
+      .setBackground("#FFC107")
+      .setRanges([sheet.getRange("F5:I18")])
+      .build()
+  ];
+  
+  sheet.setConditionalFormatRules(riskRules);
+  
+  // Auto-refresh timestamp
+  sheet.getRange("I1").setValue("Last Updated:");
+  sheet.getRange("J1").setFormula("=NOW()").setNumberFormat("MM/dd/yyyy HH:mm");
 }
 
 function createDashboard(ss, config) {
@@ -321,8 +510,6 @@ function createDashboard(ss, config) {
   sheet.getRange("J3").setValue("Last Updated:");
   sheet.getRange("J4").setFormula("=NOW()").setNumberFormat("MM/dd/yyyy HH:mm");
 }
-
-
 
 function createContactsSheet(ss, config) {
   let sheet = ss.insertSheet("Contacts");
@@ -397,7 +584,7 @@ function createScheduleOverview(ss, config) {
     for (let day = 2; day <= 6; day++) {
       let rowStart = 3 + (week * 3);
       let dayName = weekDays[day - 1];
-      let formula = `=IFERROR(JOIN(CHAR(10),QUERY('Email Tracker'!A:W,"SELECT J WHERE H = date '"&TEXT(DATE(2024,12,9+(${week-1}*7)+(${day-2})),"yyyy-mm-dd")&"' AND O <> 'Cancelled'",0)),"")`;
+      let formula = `=IFERROR(JOIN(CHAR(10),QUERY('Email Tracker'!A:Y,"SELECT J WHERE H = date '"&TEXT(DATE(2024,12,9+(${week-1}*7)+(${day-2})),"yyyy-mm-dd")&"' AND O <> 'Cancelled'",0)),"")`;
       sheet.getRange(rowStart, day).setFormula(formula);
     }
   }
@@ -447,7 +634,6 @@ function createFollowUpQueue(ss, config) {
   sheet.getRange("A24").setValue("Change status: Update Email Tracker Column O");
 }
 
-
 function addConditionalFormatting(sheet) {
   const rules = [];
   
@@ -456,7 +642,7 @@ function addConditionalFormatting(sheet) {
     SpreadsheetApp.newConditionalFormatRule()
       .whenFormulaSatisfied('=AND($B2<>"",$H2<TODAY(),$O2<>"Sent",$O2<>"Cancelled")')
       .setBackground("#FFCDD2")
-      .setRanges([sheet.getRange("A2:W100")])
+      .setRanges([sheet.getRange("A2:Y100")])
       .build()
   );
   
@@ -465,7 +651,7 @@ function addConditionalFormatting(sheet) {
     SpreadsheetApp.newConditionalFormatRule()
       .whenFormulaSatisfied('=AND($B2<>"",$H2<=TODAY()+2,$H2>=TODAY(),$O2<>"Sent")')
       .setBackground("#FFF9C4")
-      .setRanges([sheet.getRange("A2:W100")])
+      .setRanges([sheet.getRange("A2:Y100")])
       .build()
   );
   
@@ -474,7 +660,7 @@ function addConditionalFormatting(sheet) {
     SpreadsheetApp.newConditionalFormatRule()
       .whenFormulaSatisfied('=AND($B2<>"",$O2="Sent")')
       .setBackground("#C8E6C9")
-      .setRanges([sheet.getRange("A2:W100")])
+      .setRanges([sheet.getRange("A2:Y100")])
       .build()
   );
   
@@ -509,12 +695,12 @@ function addConditionalFormatting(sheet) {
   sheet.setConditionalFormatRules(rules);
 }
 
-
 function createCustomMenu(ss) {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu('Email Tracker')
     .addItem('Refresh Dashboard', 'refreshDashboard')
     .addItem('Send Daily Digest', 'sendDailyDigest')
+    .addItem('Validate Dependencies', 'runDependencyValidation')
     .addItem('Archive Completed', 'archiveCompleted')
     .addItem('Generate Weekly Report', 'generateWeeklyReport')
     .addSeparator()
@@ -522,6 +708,23 @@ function createCustomMenu(ss) {
     .addSeparator()
     .addItem('🔧 Debug: Reset & Rebuild All Sheets', 'resetAndRebuild')
     .addToUi();
+}
+
+// NEW FUNCTION: Run dependency validation
+function runDependencyValidation() {
+  const violations = validateDependencies();
+  const ui = SpreadsheetApp.getUi();
+  
+  if (violations.length === 0) {
+    ui.alert('Dependency Check ✅', 'All dependencies are properly satisfied. No violations found.', ui.ButtonSet.OK);
+  } else {
+    let message = `Found ${violations.length} dependency violation(s):\n\n`;
+    violations.forEach(violation => {
+      message += `• ${violation.id}: ${violation.subject}\n  Missing: ${violation.dependencies}\n\n`;
+    });
+    
+    ui.alert('Dependency Violations ⚠️', message, ui.ButtonSet.OK);
+  }
 }
 
 function resetAndRebuild() {
@@ -546,12 +749,25 @@ function resetAndRebuild() {
 function refreshDashboard() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const dashboard = ss.getSheetByName("Dashboard");
+  const depDashboard = ss.getSheetByName("Dependency Dashboard");
   
-  // Update timestamp
-  dashboard.getRange("J4").setValue(new Date());
+  // Update timestamps
+  if (dashboard) {
+    dashboard.getRange("J4").setValue(new Date());
+  }
+  if (depDashboard) {
+    depDashboard.getRange("J1").setValue(new Date());
+  }
   
   // Force recalculation
   SpreadsheetApp.flush();
+  
+  // Run dependency validation
+  const violations = validateDependencies();
+  if (violations.length > 0) {
+    const ui = SpreadsheetApp.getUi();
+    ui.alert('⚠️ Dependencies Alert', `Found ${violations.length} dependency violations. Check the Dependency Dashboard for details.`, ui.ButtonSet.OK);
+  }
 }
 
 function sendDailyDigest() {
@@ -567,17 +783,50 @@ function sendDailyDigest() {
            row[14] !== "Sent"; // Column O
   });
   
+  // Get ASAP items
+  const asapItems = tracker.getDataRange().getValues().filter(row => {
+    return row[8] === "ASAP" && row[14] !== "Sent"; // Column I and O
+  });
+  
+  // Get dependency violations
+  const violations = validateDependencies();
+  
+  let digest = "Daily Email Communications Digest:\n\n";
+  
+  // Today's items
   if (todayItems.length > 0) {
-    // Format digest email
-    let digest = "Today's Email Communications:\n\n";
+    digest += `📅 DUE TODAY (${todayItems.length} items):\n`;
     todayItems.forEach(item => {
-      digest += `• ${item[9]} (To: ${item[5]})\n`; // Subject and recipient
+      digest += `• ${item[10]} (To: ${item[5]}) - ${item[8]} priority\n`; // Subject, To, Flexibility
     });
-    
-    // Log digest (would send email in production)
-    console.log(digest);
-    SpreadsheetApp.getUi().alert('Daily Digest', digest, SpreadsheetApp.getUi().ButtonSet.OK);
+    digest += "\n";
   }
+  
+  // ASAP items
+  if (asapItems.length > 0) {
+    digest += `🔥 URGENT ITEMS (${asapItems.length} items):\n`;
+    asapItems.forEach(item => {
+      digest += `• ${item[10]} (To: ${item[5]})\n`; // Subject and To
+    });
+    digest += "\n";
+  }
+  
+  // Dependency violations
+  if (violations.length > 0) {
+    digest += `⚠️ DEPENDENCY VIOLATIONS (${violations.length} items):\n`;
+    violations.forEach(violation => {
+      digest += `• ${violation.id}: ${violation.subject}\n`;
+    });
+    digest += "\n";
+  }
+  
+  if (todayItems.length === 0 && asapItems.length === 0 && violations.length === 0) {
+    digest += "✅ No items requiring immediate attention.\n";
+  }
+  
+  // Log digest (would send email in production)
+  console.log(digest);
+  SpreadsheetApp.getUi().alert('Daily Digest', digest, SpreadsheetApp.getUi().ButtonSet.OK);
 }
 
 function archiveCompleted() {
@@ -589,7 +838,7 @@ function archiveCompleted() {
   if (!archive) {
     archive = ss.insertSheet("Archive");
     // Copy headers
-    tracker.getRange("A1:W1").copyTo(archive.getRange("A1:W1"));
+    tracker.getRange("A1:Y1").copyTo(archive.getRange("A1:Y1"));
   }
   
   // Find completed items older than 7 days
@@ -606,7 +855,7 @@ function archiveCompleted() {
   
   // Move to archive
   rowsToArchive.forEach(rowNum => {
-    const rowData = tracker.getRange(rowNum, 1, 1, 23).getValues();
+    const rowData = tracker.getRange(rowNum, 1, 1, 25).getValues(); // Updated for new column count
     archive.appendRow(rowData[0]);
     tracker.deleteRow(rowNum);
   });
@@ -668,7 +917,6 @@ function createDataValidations(configSheet) {
 }
 
 // Also add this helper function for generating the weekly report
-
 function generateWeeklyReport() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const tracker = ss.getSheetByName("Email Tracker");
@@ -700,12 +948,27 @@ function generateWeeklyReport() {
   const sent = weekItems.filter(row => row[14] === "Sent").length;
   const pending = weekItems.filter(row => row[14] !== "Sent" && row[14] !== "Cancelled").length;
   const highPriority = weekItems.filter(row => row[3] === "High").length;
+  const hardDeadlines = weekItems.filter(row => row[8] === "HARD").length;
+  const flexDeadlines = weekItems.filter(row => row[8] === "FLEX").length;
+  const asapItems = weekItems.filter(row => row[8] === "ASAP").length;
   
   report += `Summary:\n`;
   report += `- Total Communications: ${weekItems.length}\n`;
   report += `- Sent: ${sent}\n`;
   report += `- Pending: ${pending}\n`;
-  report += `- High Priority: ${highPriority}\n\n`;
+  report += `- High Priority: ${highPriority}\n`;
+  report += `- HARD Deadlines: ${hardDeadlines}\n`;
+  report += `- FLEX Deadlines: ${flexDeadlines}\n`;
+  report += `- ASAP Items: ${asapItems}\n\n`;
+  
+  // Dependency status
+  const violations = validateDependencies();
+  report += `Dependency Status:\n`;
+  if (violations.length === 0) {
+    report += `- ✅ No dependency violations\n\n`;
+  } else {
+    report += `- ⚠️ ${violations.length} dependency violations found\n\n`;
+  }
   
   // Group by phase
   report += `By Phase:\n`;
@@ -715,7 +978,7 @@ function generateWeeklyReport() {
     if (phaseItems.length > 0) {
       report += `\n${phase}: ${phaseItems.length} items\n`;
       phaseItems.forEach(item => {
-        report += `  - ${item[9]} (${item[14]})\n`; // Subject and Status
+        report += `  - ${item[10]} (${item[14]}) [${item[8]}]\n`; // Subject, Status, Flexibility
       });
     }
   });
@@ -723,13 +986,14 @@ function generateWeeklyReport() {
   // Items needing attention
   const needsAttention = weekItems.filter(row => 
     (row[14] !== "Sent" && row[14] !== "Cancelled") || 
-    (row[16] === "Y" && !row[18]) // Response required but not received
+    (row[16] === "Y" && !row[18]) || // Response required but not received
+    row[8] === "ASAP" // ASAP items
   );
   
   if (needsAttention.length > 0) {
     report += `\n\nItems Needing Attention:\n`;
     needsAttention.forEach(item => {
-      report += `- ${item[0]}: ${item[9]} (To: ${item[5]})\n`;
+      report += `- ${item[0]}: ${item[10]} (To: ${item[5]}) [${item[8]}]\n`;
     });
   }
   
@@ -753,7 +1017,6 @@ function generateWeeklyReport() {
 }
 
 // Add this setup wizard function for easier configuration
-
 function runSetupWizard() {
   const ui = SpreadsheetApp.getUi();
   
@@ -796,128 +1059,6 @@ function runSetupWizard() {
   config.getRange("A15").setValue(notes + "\nPrimary Contact: " + contactResponse.getResponseText());
   
   ui.alert('Setup Complete', 'The email tracker has been configured for your project.', ui.ButtonSet.OK);
-}
-
-// Add this function to handle date formatting consistently
-
-function formatDate(date) {
-  if (!(date instanceof Date)) return "";
-  
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  const year = date.getFullYear();
-  
-  return `${month}/${day}/${year}`;
-}
-
-// Add this function to validate email addresses
-
-function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
-
-// Add this function to help with bulk imports
-
-function importEmailsFromCSV() {
-  const ui = SpreadsheetApp.getUi();
-  const response = ui.alert(
-    'Import Emails from CSV',
-    'To import emails:\n\n' +
-    '1. Create a CSV with columns matching the Email Tracker\n' +
-    '2. Copy the data (without headers)\n' +
-    '3. Paste into the Email Tracker sheet starting at row 2\n\n' +
-    'Column order: Phase, Category, Priority, From, To, CC, Target Date, Flexibility, Subject, Content, Attachments, Dependencies, Body Copy, Status',
-    ui.ButtonSet.OK
-  );
-}
-
-function enhanceEmailTrackerVisuals(sheet) {
-  // Set row heights for better readability
-  sheet.setRowHeight(1, 30); // Header row
-  sheet.setRowHeights(2, 100, 25); // Data rows
-  
-  // Add borders for better visual separation
-  const dataRange = sheet.getRange("A2:W100");
-  dataRange.setBorder(
-    null, null, null, null, true, true,
-    "#E0E0E0", SpreadsheetApp.BorderStyle.SOLID
-  );
-  
-  // Format date columns
-  sheet.getRange("H2:H100").setNumberFormat("MM/dd/yyyy"); // Target Date
-  sheet.getRange("P2:P100").setNumberFormat("MM/dd/yyyy"); // Date Sent
-  sheet.getRange("S2:S100").setNumberFormat("MM/dd/yyyy"); // Response Received
-  sheet.getRange("V2:V100").setNumberFormat("MM/dd/yyyy hh:mm"); // Created
-  sheet.getRange("W2:W100").setNumberFormat("MM/dd/yyyy hh:mm"); // Modified
-  
-  // Freeze the header row and ID column
-  sheet.setFrozenRows(1);
-  sheet.setFrozenColumns(1);
-  
-  // Set text wrapping for content columns
-  sheet.getRange("J2:J100").setWrap(true); // Subject
-  sheet.getRange("K2:K100").setWrap(true); // Content
-  sheet.getRange("N2:N100").setWrap(true); // Body Copy
-  sheet.getRange("U2:U100").setWrap(true); // Notes
-  
-  // Add alternating row colors manually (instead of banding which conflicts with validation)
-  // Note: Only first 11 rows have pre-populated data, so only format those
-  for (let i = 2; i <= 11; i++) {
-    if (i % 2 === 0) {
-      sheet.getRange(i, 1, 1, 23).setBackground("#F5F5F5");
-    }
-  }
-  
-  // Add a visual status indicator column
-  addProgressIndicators(sheet);
-}
-
-function addProgressIndicators(sheet) {
-  // Add visual indicators for email status
-  const statusColumn = 15; // Column O (Status)
-  
-  // Create custom formatting for different status values
-  const range = sheet.getRange(2, statusColumn, 100, 1);
-  
-  // Create icons or symbols for each status
-  const icons = {
-    'Draft': '✏️',
-    'Ready': '📋',
-    'Sent': '✅',
-    'Confirmed': '✓✓',
-    'No Response': '⏳',
-    'Cancelled': '❌'
-  };
-  
-  // Add visual status indicators using conditional formatting
-  const rules = [];
-  
-  Object.keys(icons).forEach(status => {
-    rules.push(
-      SpreadsheetApp.newConditionalFormatRule()
-        .whenTextEqualTo(status)
-        .setBackground(getStatusColor(status))
-        .setRanges([range])
-        .build()
-    );
-  });
-  
-  const existingRules = sheet.getConditionalFormatRules();
-  sheet.setConditionalFormatRules([...existingRules, ...rules]);
-}
-
-function getStatusColor(status) {
-  const colors = {
-    'Draft': '#FFF9C4',      // Light yellow
-    'Ready': '#E1F5FE',      // Light blue
-    'Sent': '#C8E6C9',       // Light green
-    'Confirmed': '#A5D6A7',  // Medium green
-    'No Response': '#FFCCBC', // Light orange
-    'Cancelled': '#FFCDD2'   // Light red
-  };
-  
-  return colors[status] || '#FFFFFF';
 }
 
 // Helper functions for multiple selections
